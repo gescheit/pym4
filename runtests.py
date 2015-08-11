@@ -4,7 +4,11 @@ import glob
 import os
 import subprocess
 import unittest
-from StringIO import StringIO
+
+try:
+        from StringIO import StringIO
+except ImportError:
+        from io import StringIO
 
 from m4 import (
     peek_insert_iter,
