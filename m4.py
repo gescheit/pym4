@@ -145,7 +145,7 @@ class Lexer:
     def _parse_internal(self):
         while True:
             c = self.iter.peek()
-            #print 'CHAR: %s (state: %s)' % (repr(c), name(self.state))
+            # print 'CHAR: %s (state: %s)' % (repr(c), name(self.state))
             if self.state is not None:
                 tokens = self.state(c)
             else:
