@@ -253,8 +253,8 @@ class Parser:
 
     def _builtin_dnl(self, args):
         # Eat tokens till newline
-        for tok in self.token_iter:
-            if tok.value == '\n':
+        for char in self.lexer.iter:
+            if char == '\n':
                 break
         return None
 
