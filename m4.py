@@ -226,6 +226,7 @@ class Lexer:
 
 def substmacro(name, body, args):
     kwargs = {str(x + 1): args[x] for x in range(len(args))}
+    kwargs.update({str(x + 1): "" for x in range(len(args), 9)})
     kwargs["0"] = name
     res = DlrTemplate(body).safe_substitute(kwargs)
     return res
